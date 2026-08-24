@@ -1,0 +1,18 @@
+# Editor / IDE
+.cursor/
+.vscode/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Deploy artifacts
+RULECORE-deploy.zip
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json

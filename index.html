@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RuleCore — Commercialize Compliance Across Every Region</title>
+    <meta
+      name="description"
+      content="Convert fragmented local regulations into automated business logic that drives global market expansion."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              rc: {
+                blue: "#0e27ca",
+                gray: "#efefef",
+                muted: "#758289",
+                label: "#979393",
+                border: "#ece7e7",
+                dark: "#161616",
+              },
+            },
+            fontFamily: {
+              sans: ['"DM Sans"', "system-ui", "sans-serif"],
+            },
+            maxWidth: {
+              page: "1440px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="bg-white text-black font-sans antialiased">
+    <!-- ===================== HERO ===================== -->
+    <header
+      class="relative min-h-[640px] md:min-h-[760px] lg:min-h-[853px] overflow-hidden bg-black"
+    >
+      <img
+        src="images/hero-bg.png"
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      />
+      <div class="relative z-10 mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
+        <!-- Nav -->
+        <nav
+          class="mt-6 sm:mt-10 lg:mt-[58px] flex h-[56px] sm:h-[62px] items-center justify-between gap-4 rounded-lg bg-white px-4 sm:px-6"
+          aria-label="Primary"
+        >
+          <a href="#" class="text-xl sm:text-2xl font-extrabold tracking-tight shrink-0"
+            >RuleCore</a
+          >
+
+          <ul
+            class="hidden lg:flex flex-1 items-center justify-center gap-8 text-base font-medium"
+          >
+            <li>
+              <a href="#products" class="inline-flex items-center gap-1 hover:opacity-70"
+                >Products
+                <img src="images/caret-down.svg" alt="" class="h-4 w-4" />
+              </a>
+            </li>
+            <li>
+              <a href="#solutions" class="inline-flex items-center gap-1 hover:opacity-70"
+                >Solutions
+                <img src="images/caret-down.svg" alt="" class="h-4 w-4" />
+              </a>
+            </li>
+            <li>
+              <a href="#resources" class="hover:opacity-70">Resources</a>
+            </li>
+            <li>
+              <a href="#plans" class="hover:opacity-70">Plans</a>
+            </li>
+          </ul>
+
+          <div class="hidden lg:flex items-center gap-5 shrink-0">
+            <a href="#login" class="text-base font-medium hover:opacity-70">Login</a>
+            <a
+              href="#demo"
+              class="inline-flex h-[43px] items-center justify-center bg-black px-5 text-base font-medium text-white hover:bg-neutral-800"
+              >Request a demo</a
+            >
+          </div>
+
+          <button
+            id="menu-toggle"
+            type="button"
+            class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded border border-black/10"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Open menu"
+          >
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </nav>
+
+        <div id="mobile-nav" class="mobile-nav lg:hidden mt-2 rounded-lg bg-white">
+          <ul class="flex flex-col gap-1 p-4 text-base font-medium">
+            <li><a class="block py-2" href="#products">Products</a></li>
+            <li><a class="block py-2" href="#solutions">Solutions</a></li>
+            <li><a class="block py-2" href="#resources">Resources</a></li>
+            <li><a class="block py-2" href="#plans">Plans</a></li>
+            <li><a class="block py-2" href="#login">Login</a></li>
+            <li class="pt-2">
+              <a
+                href="#demo"
+                class="flex h-11 items-center justify-center bg-black text-white"
+                >Request a demo</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hero copy -->
+        <div class="pt-16 sm:pt-24 lg:pt-[170px] pb-10 lg:pb-0">
+          <h1
+            class="max-w-[1296px] text-[32px] leading-tight sm:text-5xl lg:text-[64px] font-bold text-white"
+          >
+            Commercialize Compliance Across Every Region Without Rewriting Code
+          </h1>
+
+          <div
+            class="mt-8 lg:mt-12 flex flex-col lg:flex-row lg:items-stretch gap-6 lg:gap-8"
+          >
+            <p
+              class="max-w-[628px] text-base sm:text-xl lg:text-2xl font-normal text-white leading-snug"
+            >
+              Convert fragmented local regulations, from age verification mandates to
+              dynamic tax rates , into automated business logic that drives global market
+              expansion.
+            </p>
+
+            <a
+              href="#demo"
+              class="hero-cta ml-auto lg:ml-0 flex w-full lg:w-[636px] min-h-[160px] sm:min-h-[200px] lg:min-h-[256px] shrink-0 items-start justify-between bg-rc-blue p-6 sm:p-8 text-white"
+            >
+              <span class="text-2xl sm:text-3xl lg:text-[40px] font-medium">Watch a Demo</span>
+              <span class="arrow-ne arrow-ne-lg text-white mt-1" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===================== FEATURES ===================== -->
+      <section id="products" class="py-16 sm:py-20 lg:py-[84px]">
+        <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
+          <h2 class="max-w-[1296px] text-2xl sm:text-3xl lg:text-[40px] font-medium leading-snug">
+            One API Answers What a User Can Do and What Tax Applies, In Every Market You
+            Operate
+          </h2>
+        </div>
+
+        <div
+          id="features-carousel"
+          class="features-carousel mt-10 lg:mt-14"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Key benefits"
+        >
+          <div class="features-carousel-viewport">
+            <div id="features-track" class="features-track">
+              <article class="feature-card" data-feature-slide="0" role="group" aria-label="1 of 5">
+                <img src="images/icon-compliance.svg" alt="" class="feature-card-icon" />
+                <p class="feature-card-text">
+                  Compliance without rule<br />fragmentation
+                </p>
+              </article>
+
+              <article class="feature-card" data-feature-slide="1" role="group" aria-label="2 of 5">
+                <img src="images/icon-market.svg" alt="" class="feature-card-icon" />
+                <p class="feature-card-text">Faster market expansion</p>
+              </article>
+
+              <article class="feature-card" data-feature-slide="2" role="group" aria-label="3 of 5">
+                <img src="images/icon-burden.svg" alt="" class="feature-card-icon" />
+                <p class="feature-card-text">
+                  Reduced legal and<br />engineering burden
+                </p>
+              </article>
+
+              <article class="feature-card" data-feature-slide="3" role="group" aria-label="4 of 5">
+                <img
+                  src="images/04-regulator-ready-evidence.svg"
+                  alt=""
+                  class="feature-card-icon"
+                />
+                <p class="feature-card-text">Regulator-ready evidence</p>
+              </article>
+
+              <article class="feature-card" data-feature-slide="4" role="group" aria-label="5 of 5">
+                <img
+                  src="images/05-commercial-differentiation.svg"
+                  alt=""
+                  class="feature-card-icon"
+                />
+                <p class="feature-card-text">Commercial differentiation</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex items-center justify-center gap-1" aria-hidden="true">
+          <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Slide 1"></button>
+          <button type="button" class="carousel-dot" data-carousel-dot aria-label="Slide 2"></button>
+          <button type="button" class="carousel-dot" data-carousel-dot aria-label="Slide 3"></button>
+        </div>
+      </section>
+
+      <!-- ===================== POLICY TABS ===================== -->
+      <section id="policy-section" class="py-16 sm:py-20 lg:py-[84px]">
+        <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
+          <h2 class="max-w-[1296px] text-2xl sm:text-3xl lg:text-[40px] font-medium leading-snug">
+            Grand Compliance Teams Direct Policy Control While Engineering Ships a Simple
+            Decision API
+          </h2>
+
+          <div
+            id="policy-tablist"
+            class="hide-scrollbar mt-8 lg:mt-10 flex gap-3 sm:gap-4 overflow-x-auto pb-1"
+            role="tablist"
+            aria-label="Policy capabilities"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="policy-carousel"
+              class="policy-tab active px-4 py-2 text-base sm:text-xl lg:text-2xl font-medium"
+              data-policy-tab="0"
+            >
+              <span>Age Classification</span>
+              <span class="policy-tab-progress" aria-hidden="true"></span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="policy-carousel"
+              class="policy-tab px-4 py-2 text-base sm:text-xl lg:text-2xl font-medium"
+              data-policy-tab="1"
+            >
+              <span>Access Decisioning</span>
+              <span class="policy-tab-progress" aria-hidden="true"></span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="policy-carousel"
+              class="policy-tab px-4 py-2 text-base sm:text-xl lg:text-2xl font-medium"
+              data-policy-tab="2"
+            >
+              <span>Context-aware Use</span>
+              <span class="policy-tab-progress" aria-hidden="true"></span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="policy-carousel"
+              class="policy-tab px-4 py-2 text-base sm:text-xl lg:text-2xl font-medium"
+              data-policy-tab="3"
+            >
+              <span>Sales Tax Treatment</span>
+              <span class="policy-tab-progress" aria-hidden="true"></span>
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="policy-carousel"
+              class="policy-tab px-4 py-2 text-base sm:text-xl lg:text-2xl font-medium"
+              data-policy-tab="4"
+            >
+              <span>Audit and Evidence</span>
+              <span class="policy-tab-progress" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="policy-carousel"
+          class="policy-carousel mt-8 lg:mt-10"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Policy capability slides"
+        >
+            <div class="policy-carousel-viewport">
+              <div id="policy-carousel-track" class="policy-carousel-track">
+                <article
+                  class="policy-slide is-active"
+                  role="tabpanel"
+                  aria-label="Age Classification"
+                  data-policy-slide="0"
+                >
+                  <div class="policy-slide-inner">
+                    <div class="policy-slide-media">
+                      <img
+                        src="images/age-classification.jpg"
+                        alt="People reviewing age classification on a phone"
+                      />
+                    </div>
+                    <div class="policy-slide-copy">
+                      <p>
+                        Classifies a person into a jurisdiction-specific age band such as
+                        infant, kid, teen, mature teen or adult, based on the country/state
+                        rules configured for that market.
+                      </p>
+                      <span class="arrow-ne arrow-ne-md text-white" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="policy-slide"
+                  role="tabpanel"
+                  aria-label="Access Decisioning"
+                  data-policy-slide="1"
+                  aria-hidden="true"
+                >
+                  <div class="policy-slide-inner">
+                    <div class="policy-slide-media">
+                      <img
+                        src="images/access-decisioning.jpg"
+                        alt="Access decisioning for regulated experiences"
+                      />
+                    </div>
+                    <div class="policy-slide-copy">
+                      <p>
+                        Returns a clear allow, deny, or step-up decision for regulated
+                        experiences, mature content, and jurisdiction-restricted services,
+                        using the same policy model compliance teams control.
+                      </p>
+                      <span class="arrow-ne arrow-ne-md text-white" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="policy-slide"
+                  role="tabpanel"
+                  aria-label="Context-aware Use"
+                  data-policy-slide="2"
+                  aria-hidden="true"
+                >
+                  <div class="policy-slide-inner">
+                    <div class="policy-slide-media">
+                      <img
+                        src="images/context-aware.jpg"
+                        alt="Context-aware usage decisions"
+                      />
+                    </div>
+                    <div class="policy-slide-copy">
+                      <p>
+                        Applies context-aware use rules so the same person can be treated
+                        differently by product, channel, or transaction type without shipping
+                        separate rule engines per market.
+                      </p>
+                      <span class="arrow-ne arrow-ne-md text-white" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="policy-slide"
+                  role="tabpanel"
+                  aria-label="Sales Tax Treatment"
+                  data-policy-slide="3"
+                  aria-hidden="true"
+                >
+                  <div class="policy-slide-inner">
+                    <div class="policy-slide-media">
+                      <img
+                        src="images/usecase-ecommerce.jpg"
+                        alt="Sales tax treatment on checkout"
+                      />
+                    </div>
+                    <div class="policy-slide-copy">
+                      <p>
+                        Determines sales tax treatment after the final price is set,
+                        jurisdiction applicability, rate selection, and reason codes ready
+                        for invoices and audit trails.
+                      </p>
+                      <span class="arrow-ne arrow-ne-md text-white" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="policy-slide"
+                  role="tabpanel"
+                  aria-label="Audit and Evidence"
+                  data-policy-slide="4"
+                  aria-hidden="true"
+                >
+                  <div class="policy-slide-inner">
+                    <div class="policy-slide-media">
+                      <img
+                        src="images/usecase-enterprise.jpg"
+                        alt="Audit and evidence for compliance teams"
+                      />
+                    </div>
+                    <div class="policy-slide-copy">
+                      <p>
+                        Produces regulator-ready evidence for every decision: who was
+                        classified, which rule version applied, and why access or tax
+                        treatment was returned.
+                      </p>
+                      <span class="arrow-ne arrow-ne-md text-white" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- ===================== TAX ===================== -->
+      <section class="py-16 sm:py-20 lg:py-[72px]">
+        <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
+          <h2 class="max-w-[1296px] text-2xl sm:text-3xl lg:text-[40px] font-medium leading-snug">
+            Tax Is Calculated Once the Final Price Is Set, Never Before
+          </h2>
+
+          <div class="mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            <article
+              class="tax-card relative flex min-h-[320px] lg:min-h-[439px] flex-col bg-rc-gray p-6 cursor-pointer"
+            >
+              <h3 class="text-lg sm:text-xl font-medium leading-snug max-w-[220px]">
+                Jurisdiction and tax applicability model
+              </h3>
+              <div class="mt-auto flex items-end justify-between pt-16">
+                <img
+                  src="images/06-jurisdiction-model.svg"
+                  alt=""
+                  class="tax-card-icon h-[100px] w-[100px] lg:h-[139px] lg:w-[139px]"
+                />
+                <span class="arrow-ne arrow-ne-md" aria-hidden="true"></span>
+              </div>
+            </article>
+
+            <article
+              class="tax-card relative flex min-h-[320px] lg:min-h-[439px] flex-col bg-rc-gray p-6 cursor-pointer"
+            >
+              <h3 class="text-lg sm:text-xl font-medium leading-snug max-w-[260px]">
+                Tax rate, amount and gross/net breakdown
+              </h3>
+              <div class="mt-auto flex items-end justify-between pt-16">
+                <img
+                  src="images/07-rate-breakdown.svg"
+                  alt=""
+                  class="tax-card-icon h-[100px] w-[100px] lg:h-[139px] lg:w-[139px]"
+                />
+                <span class="arrow-ne arrow-ne-md" aria-hidden="true"></span>
+              </div>
+            </article>
+
+            <article
+              class="tax-card relative flex min-h-[320px] lg:min-h-[439px] flex-col bg-rc-gray p-6 cursor-pointer"
+            >
+              <h3 class="text-lg sm:text-xl font-medium leading-snug max-w-[240px]">
+                Customer-borne versus creator-borne tax breakdown
+              </h3>
+              <div class="mt-auto flex items-end justify-between pt-16">
+                <img
+                  src="images/08-borne-split.svg"
+                  alt=""
+                  class="tax-card-icon h-[100px] w-[100px] lg:h-[139px] lg:w-[139px]"
+                />
+                <span class="arrow-ne arrow-ne-md" aria-hidden="true"></span>
+              </div>
+            </article>
+
+            <article
+              class="tax-card relative flex min-h-[320px] lg:min-h-[439px] flex-col bg-rc-gray p-6 cursor-pointer"
+            >
+              <h3 class="text-lg sm:text-xl font-medium leading-snug max-w-[220px]">
+                Invoice-ready tax line items and reason codes
+              </h3>
+              <div class="mt-auto flex items-end justify-between pt-16">
+                <img
+                  src="images/09-line-items.svg"
+                  alt=""
+                  class="tax-card-icon h-[100px] w-[100px] lg:h-[139px] lg:w-[139px]"
+                />
+                <span class="arrow-ne arrow-ne-md" aria-hidden="true"></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== USE CASES ===================== -->
+      <section id="solutions" class="py-16 sm:py-20 lg:py-[84px]">
+        <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
+          <h2 class="max-w-[1296px] text-2xl sm:text-3xl lg:text-[40px] font-medium leading-snug">
+            Built for the Platforms Where Age and Tax Decisions Carry the Most Risk
+          </h2>
+
+          <div
+            class="mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          >
+            <article
+              class="usecase-card relative min-h-[280px] sm:min-h-[360px] lg:min-h-[422px] overflow-hidden sm:col-span-1 lg:col-span-2"
+            >
+              <div class="usecase-card-default absolute inset-0">
+                <img
+                  src="images/usecase-ecommerce.jpg"
+                  alt=""
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+                <div class="usecase-overlay absolute inset-0"></div>
+                <h3 class="absolute bottom-6 left-6 right-6 text-2xl sm:text-[32px] font-extrabold text-white">
+                  Ecommerce marketplaces
+                </h3>
+              </div>
+              <div class="usecase-card-hover absolute inset-0 flex flex-col bg-rc-blue p-6 text-white">
+                <p class="text-xl sm:text-2xl lg:text-[32px] font-semibold leading-snug max-w-[540px] pt-4">
+                  Apply age verification and sales tax rules at checkout, listing, and
+                  payout without rebuilding flows for every new market.
+                </p>
+                <div class="mt-auto flex items-center justify-between gap-4 pt-10">
+                  <p class="text-sm sm:text-base font-medium">Ecommerce marketplaces</p>
+                  <span class="arrow-ne arrow-ne-sm shrink-0" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="usecase-card relative min-h-[280px] sm:min-h-[360px] lg:min-h-[422px] overflow-hidden sm:col-span-1 lg:col-span-2"
+            >
+              <div class="usecase-card-default absolute inset-0">
+                <img
+                  src="images/access-decisioning.jpg"
+                  alt=""
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+                <div class="usecase-overlay absolute inset-0"></div>
+                <h3 class="absolute bottom-6 left-6 right-6 text-2xl sm:text-[32px] font-extrabold text-white">
+                  Gaming, gambling and streaming platforms
+                </h3>
+              </div>
+              <div class="usecase-card-hover absolute inset-0 flex flex-col bg-rc-blue p-6 text-white">
+                <p class="text-xl sm:text-2xl lg:text-[32px] font-semibold leading-snug max-w-[540px] pt-4">
+                  Decide whether a user can access regulated experiences, mature content or
+                  jurisdiction-restricted services.
+                </p>
+                <div class="mt-auto flex items-center justify-between gap-4 pt-10">
+                  <p class="text-sm sm:text-base font-medium">
+                    Gaming, gambling and streaming platforms
+                  </p>
+                  <span class="arrow-ne arrow-ne-sm shrink-0" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="usecase-card relative min-h-[280px] sm:min-h-[360px] lg:min-h-[422px] overflow-hidden"
+            >
+              <div class="usecase-card-default absolute inset-0">
+                <img
+                  src="images/usecase-creator.jpg"
+                  alt=""
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+                <div class="usecase-overlay absolute inset-0"></div>
+                <h3 class="absolute bottom-6 left-6 right-6 text-2xl sm:text-[32px] font-extrabold text-white leading-snug">
+                  Creator and<br />service<br />marketplaces
+                </h3>
+              </div>
+              <div class="usecase-card-hover absolute inset-0 flex flex-col bg-rc-blue p-6 text-white">
+                <p class="text-xl sm:text-2xl lg:text-[32px] font-semibold leading-snug max-w-[540px] pt-4">
+                  Gate payouts, content access, and tax treatment by jurisdiction so creators
+                  and platforms stay compliant as they scale.
+                </p>
+                <div class="mt-auto flex items-center justify-between gap-4 pt-10">
+                  <p class="text-sm sm:text-base font-medium">
+                    Creator and service marketplaces
+                  </p>
+                  <span class="arrow-ne arrow-ne-sm shrink-0" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="usecase-card relative min-h-[280px] sm:min-h-[360px] lg:min-h-[422px] overflow-hidden"
+            >
+              <div class="usecase-card-default absolute inset-0">
+                <img
+                  src="images/usecase-social.jpg"
+                  alt=""
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+                <div class="usecase-overlay absolute inset-0"></div>
+                <h3 class="absolute bottom-6 left-6 right-6 text-2xl sm:text-[32px] font-extrabold text-white leading-snug max-w-[280px]">
+                  Social and youth-oriented platforms
+                </h3>
+              </div>
+              <div class="usecase-card-hover absolute inset-0 flex flex-col bg-rc-blue p-6 text-white">
+                <p class="text-xl sm:text-2xl lg:text-[32px] font-semibold leading-snug max-w-[540px] pt-4">
+                  Enforce youth-safe defaults and jurisdiction-specific age bands before users
+                  post, purchase, or access restricted features.
+                </p>
+                <div class="mt-auto flex items-center justify-between gap-4 pt-10">
+                  <p class="text-sm sm:text-base font-medium">
+                    Social and youth-oriented platforms
+                  </p>
+                  <span class="arrow-ne arrow-ne-sm shrink-0" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="usecase-card relative min-h-[280px] sm:min-h-[360px] lg:min-h-[422px] overflow-hidden sm:col-span-2 lg:col-span-2"
+            >
+              <div class="usecase-card-default absolute inset-0">
+                <img
+                  src="images/usecase-enterprise.jpg"
+                  alt=""
+                  class="absolute inset-0 h-full w-full object-cover"
+                />
+                <div class="usecase-overlay absolute inset-0"></div>
+                <h3 class="absolute bottom-6 left-6 right-6 text-2xl sm:text-[32px] font-extrabold text-white leading-snug">
+                  Enterprise platforms expanding globally
+                </h3>
+              </div>
+              <div class="usecase-card-hover absolute inset-0 flex flex-col bg-rc-blue p-6 text-white">
+                <p class="text-xl sm:text-2xl lg:text-[32px] font-semibold leading-snug max-w-[540px] pt-4">
+                  Ship one decision API across regions while compliance teams control policy
+                  and engineering keeps a simple integration surface.
+                </p>
+                <div class="mt-auto flex items-center justify-between gap-4 pt-10">
+                  <p class="text-sm sm:text-base font-medium">
+                    Enterprise platforms expanding globally
+                  </p>
+                  <span class="arrow-ne arrow-ne-sm shrink-0" aria-hidden="true"></span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PRICING ===================== -->
+      <section id="plans" class="py-16 sm:py-20 lg:py-16">
+        <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
+          <h2 class="max-w-[1296px] text-2xl sm:text-3xl lg:text-[40px] font-medium leading-snug">
+            A Subscription-Plus-Usage Model Built for Enterprise-Grade Compliance
+            Infrastructure
+          </h2>
+
+          <div class="mt-10 lg:mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-5">
+            <!-- Basic -->
+            <article
+              class="flex flex-col rounded-lg border-2 border-rc-border p-8 sm:p-10 min-h-0 xl:min-h-[704px]"
+            >
+              <h3 class="text-3xl lg:text-[40px] font-medium">Basic</h3>
+              <p class="mt-8 lg:mt-12 text-base font-medium text-rc-muted leading-snug">
+                Core age classification and platform access, for teams validating
+                jurisdictional compliance before scaling volume.
+              </p>
+              <a
+                href="#demo"
+                class="mt-8 inline-flex h-[57px] w-full items-center justify-center gap-3 bg-black text-base font-medium text-white hover:bg-neutral-800"
+              >
+                See Basic Plan
+                <span class="arrow-ne arrow-ne-sm text-white" aria-hidden="true"></span>
+              </a>
+              <ul class="mt-10 lg:mt-14 space-y-5 text-base">
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Base platform access, rule engine, admin portal, audit capability</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Age classification API, standard data-volume tier</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Standard age-band configuration</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Standard support</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Audit log access (30-day retention)</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Pro -->
+            <article
+              class="flex flex-col rounded-lg border-2 border-rc-border p-8 sm:p-10 min-h-0 xl:min-h-[704px]"
+            >
+              <h3 class="text-3xl lg:text-[40px] font-medium">Pro</h3>
+              <p class="mt-8 lg:mt-12 text-base font-medium text-rc-muted leading-snug">
+                Full age and tax decisioning at production volume, for platforms actively
+                expanding across new markets.
+              </p>
+              <a
+                href="#demo"
+                class="mt-8 inline-flex h-[57px] w-full items-center justify-center gap-3 bg-black text-base font-medium text-white hover:bg-neutral-800"
+              >
+                See Basic Plan
+                <span class="arrow-ne arrow-ne-sm text-white" aria-hidden="true"></span>
+              </a>
+              <ul class="mt-10 lg:mt-14 space-y-5 text-base">
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Everything in Basic, plus:</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Sales tax lookup &amp; calculation module</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Higher API-call / data-volume tier</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Custom age-band configuration per jurisdiction</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Priority support</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Extended audit log retention (12 months)</span>
+                </li>
+              </ul>
+            </article>
+
+            <!-- Premium -->
+            <article
+              class="flex flex-col rounded-lg border-2 border-rc-border p-8 sm:p-10 min-h-0 xl:min-h-[704px] md:col-span-2 xl:col-span-1"
+            >
+              <h3 class="text-3xl lg:text-[40px] font-medium">Premium</h3>
+              <p class="mt-8 lg:mt-12 text-base font-medium text-rc-muted leading-snug">
+                Unlimited decisioning with dedicated jurisdiction maintenance, for
+                enterprise platforms operating at global scale.
+              </p>
+              <a
+                href="#demo"
+                class="mt-8 inline-flex h-[57px] w-full items-center justify-center gap-3 bg-black text-base font-medium text-white hover:bg-neutral-800"
+              >
+                See Basic Plan
+                <span class="arrow-ne arrow-ne-sm text-white" aria-hidden="true"></span>
+              </a>
+              <ul class="mt-10 lg:mt-14 space-y-5 text-base">
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Everything in Pro, plus:</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Advanced tax coverage module</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Policy monitoring &amp; report exports</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Jurisdiction-by-jurisdiction legal maintenance</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Dedicated integration support</span>
+                </li>
+                <li class="flex gap-3">
+                  <img src="images/tick.svg" alt="" class="mt-0.5 h-6 w-6 shrink-0" />
+                  <span>Unlimited audit log retention &amp; exports</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== BOTTOM CTA ===================== -->
+      <section id="demo" class="py-16 sm:py-20 lg:py-[84px]">
+        <div class="mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
+          <h2 class="max-w-[1296px] text-2xl sm:text-3xl lg:text-[40px] font-medium leading-snug">
+            Replace Months of Cross Boarder Legal Engineering With One Unified Decision
+            Payload
+          </h2>
+
+          <div class="mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+            <a
+              href="#demo"
+              class="bottom-cta flex min-h-[160px] sm:min-h-[200px] lg:min-h-[256px] items-start justify-between bg-rc-blue p-6 sm:p-8 text-white"
+            >
+              <span class="text-2xl sm:text-3xl lg:text-[40px] font-medium">Watch a Demo</span>
+              <span class="arrow-ne arrow-ne-lg mt-1" aria-hidden="true"></span>
+            </a>
+            <a
+              href="#resources"
+              class="bottom-cta flex min-h-[160px] sm:min-h-[200px] lg:min-h-[256px] items-start justify-between bg-black p-6 sm:p-8 text-white"
+            >
+              <span class="text-2xl sm:text-3xl lg:text-[40px] font-medium"
+                >Read Documentation</span
+              >
+              <span class="arrow-ne arrow-ne-lg mt-1" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="resources" class="border-t border-rc-border py-16 sm:py-20 lg:py-[128px]">
+      <div
+        class="mx-auto max-w-page px-4 sm:px-6 lg:px-[72px] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-8"
+      >
+        <div class="col-span-2 sm:col-span-3 lg:col-span-1 max-w-[280px]">
+          <p class="text-2xl font-extrabold">RuleCore</p>
+          <p class="mt-6 text-base text-[#202426] leading-snug">
+            The jurisdiction-aware compliance API for age classification and sales tax
+            decisioning, one integration, every region.
+          </p>
+        </div>
+
+        <div>
+          <p class="text-base font-medium text-rc-label">PRODUCTS</p>
+          <ul class="mt-5 space-y-4 text-base">
+            <li><a href="#products" class="hover:opacity-70">Age Classification</a></li>
+            <li><a href="#products" class="hover:opacity-70">Sales Tax Compliance</a></li>
+            <li><a href="#products" class="hover:opacity-70">Unified API</a></li>
+            <li><a href="#plans" class="hover:opacity-70">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-base font-medium text-rc-label">SOLUTIONS</p>
+          <ul class="mt-5 space-y-4 text-base">
+            <li><a href="#solutions" class="hover:opacity-70">E commerce &amp; Marketplaces</a></li>
+            <li><a href="#solutions" class="hover:opacity-70">Gaming &amp; Streaming</a></li>
+            <li><a href="#solutions" class="hover:opacity-70">Creator Platforms</a></li>
+            <li><a href="#solutions" class="hover:opacity-70">Enterprise</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-base font-medium text-rc-label">RESOURCES</p>
+          <ul class="mt-5 space-y-4 text-base">
+            <li><a href="#resources" class="hover:opacity-70">Documentation</a></li>
+            <li><a href="#resources" class="hover:opacity-70">API Reference</a></li>
+            <li><a href="#resources" class="hover:opacity-70">Compliance Library</a></li>
+            <li><a href="#resources" class="hover:opacity-70">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-base font-medium text-rc-label">COMPANY</p>
+          <ul class="mt-5 space-y-4 text-base">
+            <li><a href="#login" class="hover:opacity-70">About</a></li>
+            <li><a href="#login" class="hover:opacity-70">Contact</a></li>
+            <li><a href="#demo" class="hover:opacity-70">Request a Demo</a></li>
+            <li><a href="#login" class="hover:opacity-70">Security</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
