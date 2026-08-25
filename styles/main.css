@@ -7,6 +7,7 @@
   --rc-footer-label: #979393;
   --rc-border: #ece7e7;
   --rc-dark: #161616;
+  --rc-radius: 8px;
 }
 
 html {
@@ -110,6 +111,8 @@ body {
   background: var(--rc-gray);
   padding: 4rem 1.5rem 2.5rem;
   min-height: 420px;
+  border-radius: var(--rc-radius);
+  overflow: hidden;
 }
 
 .feature-card-icon {
@@ -255,6 +258,7 @@ body {
   min-height: 420px;
   overflow: hidden;
   background: #161616;
+  border-radius: var(--rc-radius);
 }
 
 .policy-slide-media {
@@ -342,6 +346,8 @@ body {
 .tax-card {
   background-color: var(--rc-gray);
   color: #000;
+  border-radius: var(--rc-radius);
+  overflow: hidden;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -366,7 +372,7 @@ body {
   min-height: 460px;
   overflow: hidden;
   border: 1px solid var(--rc-border);
-  border-radius: 8px;
+  border-radius: var(--rc-radius);
   background: #fff;
 }
 
@@ -390,7 +396,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 7px 14px;
-  border-radius: 8px;
+  border-radius: var(--rc-radius);
   background: var(--rc-blue);
   color: #fff;
   font-size: 13px;
@@ -440,7 +446,7 @@ body {
   width: 100%;
   height: 52px;
   border: 1px solid var(--rc-border);
-  border-radius: 8px;
+  border-radius: var(--rc-radius);
   background: #fff;
   color: #000;
   font-size: 15px;
@@ -497,7 +503,7 @@ body {
 /* Use-case cards — image default, blue detail on hover */
 .usecase-card {
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: var(--rc-radius);
 }
 
 .usecase-card-default,
@@ -632,6 +638,7 @@ body {
   overflow: hidden;
   text-decoration: none;
   cursor: pointer;
+  border-radius: var(--rc-radius);
   transition:
     background-color 0.3s ease,
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
