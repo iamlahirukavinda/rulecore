@@ -371,6 +371,7 @@ body {
 }
 
 .pricing-card-top {
+  position: relative;
   display: flex;
   flex: 1.7 1 0;
   align-items: center;
@@ -378,6 +379,25 @@ body {
   min-height: 320px;
   padding: 40px 32px;
   background: #fff;
+}
+
+.pricing-card-label {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #0e27ca 0%, #3d5cff 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .pricing-card-icon {
@@ -437,6 +457,13 @@ body {
   .pricing-card-top {
     min-height: 340px;
     padding: 48px 40px;
+  }
+
+  .pricing-card-label {
+    top: 32px;
+    left: 32px;
+    padding: 9px 18px;
+    font-size: 15px;
   }
 
   .pricing-card-bottom {
