@@ -363,39 +363,40 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 560px;
+  min-height: 500px;
   overflow: hidden;
   border: 1px solid var(--rc-border);
-  border-radius: 8px;
+  border-radius: 20px;
   background: #fff;
 }
 
 .pricing-card-top {
   position: relative;
   display: flex;
-  flex: 1 1 0;
+  flex: 0 0 auto;
   align-items: flex-end;
   justify-content: center;
-  min-height: 240px;
-  padding: 40px 32px 16px;
+  min-height: 0;
+  height: auto;
+  padding: 16px 16px 0;
   background: #fff;
 }
 
 .pricing-card-label {
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 16px;
+  left: 16px;
   z-index: 1;
   margin: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 7px 14px;
+  border-radius: 9999px;
   background: var(--rc-blue);
   color: #fff;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -403,17 +404,19 @@ body {
 }
 
 .pricing-card-icon {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
+  max-width: 72%;
   object-fit: contain;
   display: block;
+  margin-bottom: 0;
 }
 
 .pricing-card-bottom {
   display: flex;
-  flex: 1.75 1 0;
+  flex: 1 1 auto;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 280px;
   padding: 32px;
   border-top: 1px solid var(--rc-border);
   background: #f7f7f7;
@@ -452,23 +455,28 @@ body {
 
 @media (min-width: 768px) {
   .pricing-card {
-    min-height: 600px;
+    min-height: 520px;
   }
 
   .pricing-card-top {
-    min-height: 260px;
-    padding: 48px 40px 20px;
+    padding: 20px 20px 0;
   }
 
   .pricing-card-label {
-    top: 32px;
-    left: 32px;
-    padding: 9px 16px;
-    font-size: 15px;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .pricing-card-icon {
+    width: 220px;
+    height: 220px;
+    max-width: 70%;
   }
 
   .pricing-card-bottom {
-    min-height: 320px;
+    min-height: 300px;
     padding: 40px;
   }
 
