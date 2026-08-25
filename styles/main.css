@@ -373,11 +373,11 @@ body {
 .pricing-card-top {
   position: relative;
   display: flex;
-  flex: 1.7 1 0;
-  align-items: center;
+  flex: 1 1 0;
+  align-items: flex-end;
   justify-content: center;
-  min-height: 320px;
-  padding: 40px 32px;
+  min-height: 240px;
+  padding: 40px 32px 16px;
   background: #fff;
 }
 
@@ -385,46 +385,47 @@ body {
   position: absolute;
   top: 24px;
   left: 24px;
+  z-index: 1;
   margin: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  border-radius: 9999px;
-  background: linear-gradient(90deg, #0e27ca 0%, #3d5cff 100%);
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--rc-blue);
   color: #fff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.01em;
   white-space: nowrap;
+  box-shadow: none;
 }
 
 .pricing-card-icon {
-  width: 220px;
-  height: 220px;
+  width: 160px;
+  height: 160px;
   object-fit: contain;
   display: block;
 }
 
 .pricing-card-bottom {
   display: flex;
-  flex: 1 1 0;
+  flex: 1.75 1 0;
   flex-direction: column;
-  min-height: 220px;
+  min-height: 300px;
   padding: 32px;
   border-top: 1px solid var(--rc-border);
   background: #f7f7f7;
 }
 
 .pricing-card-text {
-  flex: 1;
+  flex: 1 1 auto;
   margin: 0;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.35;
   color: #000;
-  min-height: 4.5em;
 }
 
 .pricing-card-cta {
@@ -434,7 +435,7 @@ body {
   gap: 12px;
   width: 100%;
   height: 57px;
-  margin-top: 24px;
+  margin-top: auto;
   flex-shrink: 0;
   border: 1px solid #000;
   border-radius: 6px;
@@ -455,20 +456,20 @@ body {
   }
 
   .pricing-card-top {
-    min-height: 340px;
-    padding: 48px 40px;
+    min-height: 260px;
+    padding: 48px 40px 20px;
   }
 
   .pricing-card-label {
     top: 32px;
     left: 32px;
-    padding: 9px 18px;
+    padding: 9px 16px;
     font-size: 15px;
   }
 
   .pricing-card-bottom {
-    min-height: 240px;
-    padding: 32px 40px;
+    min-height: 320px;
+    padding: 40px;
   }
 
   .pricing-card-text {
