@@ -491,16 +491,50 @@ body {
   max-height: 420px;
 }
 
-/* Hero CTA button */
-.hero-cta,
+/* Bottom CTA cards — identical hover on blue + black (also used by hero CTA) */
 .bottom-cta {
-  transition: filter 0.2s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease;
 }
 
-.hero-cta:hover,
+.bottom-cta-blue {
+  background-color: var(--rc-blue);
+}
+
+.bottom-cta-dark {
+  background-color: #000;
+}
+
+.bottom-cta .arrow-ne {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .bottom-cta:hover {
-  filter: brightness(1.08);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.bottom-cta-blue:hover {
+  background-color: #1635e8;
+}
+
+.bottom-cta-dark:hover {
+  background-color: #1a1a1a;
+}
+
+.bottom-cta:hover .arrow-ne {
+  transform: translate(6px, -6px);
+}
+
+.bottom-cta:active {
   transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -508,8 +542,13 @@ body {
     scroll-behavior: auto;
   }
 
-  .hero-cta:hover,
-  .bottom-cta:hover {
+  .bottom-cta:hover,
+  .bottom-cta:active {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .bottom-cta:hover .arrow-ne {
     transform: none;
   }
 
