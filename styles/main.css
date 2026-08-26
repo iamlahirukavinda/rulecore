@@ -423,26 +423,194 @@ body {
   }
 }
 
-/* Tax cards — blue on hover only */
+/* Tax cards — output default, evaluation + icon swap on hover */
 .tax-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  padding: 24px;
   background-color: var(--rc-gray);
   color: #000;
   border-radius: var(--rc-radius);
   overflow: hidden;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tax-card:hover {
-  background-color: var(--rc-blue);
-  color: #fff;
+.tax-card-copy {
+  position: relative;
+  flex: 1 1 auto;
+  display: grid;
+}
+
+.tax-card-title {
+  margin: 0;
+  grid-area: 1 / 1;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tax-card-title-default {
+  max-width: 14rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tax-card-title-hover {
+  max-width: 18rem;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.tax-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 48px;
+}
+
+.tax-card-icons {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
 }
 
 .tax-card-icon {
-  transition: filter 0.25s ease;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tax-card:hover .tax-card-icon {
+.tax-card-icon-default {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.tax-card-icon-hover {
+  opacity: 0;
+  transform: scale(0.94);
+  pointer-events: none;
   filter: brightness(0) invert(1);
+}
+
+.tax-card .arrow-ne {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tax-card:focus-visible {
+  outline: 3px solid rgba(14, 39, 202, 0.35);
+  outline-offset: 2px;
+}
+
+/* Shared reveal (hover / keyboard / touch) */
+.tax-card.is-revealed,
+.tax-card:focus-visible {
+  background-color: var(--rc-blue);
+  color: #fff;
+  box-shadow: 0 14px 36px rgba(14, 39, 202, 0.18);
+}
+
+.tax-card.is-revealed .tax-card-title-default,
+.tax-card:focus-visible .tax-card-title-default {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.tax-card.is-revealed .tax-card-title-hover,
+.tax-card:focus-visible .tax-card-title-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tax-card.is-revealed .tax-card-icon-default,
+.tax-card:focus-visible .tax-card-icon-default {
+  opacity: 0;
+  transform: scale(1.04);
+}
+
+.tax-card.is-revealed .tax-card-icon-hover,
+.tax-card:focus-visible .tax-card-icon-hover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.tax-card.is-revealed .arrow-ne,
+.tax-card:focus-visible .arrow-ne {
+  transform: translate(5px, -5px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tax-card:hover {
+    background-color: var(--rc-blue);
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(14, 39, 202, 0.18);
+  }
+
+  .tax-card:hover .tax-card-title-default {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  .tax-card:hover .tax-card-title-hover {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tax-card:hover .tax-card-icon-default {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+
+  .tax-card:hover .tax-card-icon-hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .tax-card:hover .arrow-ne {
+    transform: translate(5px, -5px);
+  }
+}
+
+@media (min-width: 640px) {
+  .tax-card-title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tax-card {
+    min-height: 439px;
+  }
+
+  .tax-card-icons {
+    width: 139px;
+    height: 139px;
+  }
+
+  .tax-card-footer {
+    padding-top: 64px;
+  }
 }
 
 /* Pricing cards — reference spacing: top / body / footer */
@@ -956,6 +1124,30 @@ body {
 
   .pricing-card:hover .pricing-card-icon,
   .pricing-card:hover .pricing-card-cta .arrow-ne {
+    transform: none;
+  }
+
+  .tax-card,
+  .tax-card-title,
+  .tax-card-icon,
+  .tax-card .arrow-ne {
+    transition: none !important;
+  }
+
+  .tax-card:hover {
+    transform: none;
+  }
+
+  .tax-card:hover .tax-card-title-default,
+  .tax-card:hover .tax-card-title-hover,
+  .tax-card:hover .tax-card-icon-default,
+  .tax-card:hover .tax-card-icon-hover,
+  .tax-card:hover .arrow-ne,
+  .tax-card.is-revealed .tax-card-title-default,
+  .tax-card.is-revealed .tax-card-title-hover,
+  .tax-card.is-revealed .tax-card-icon-default,
+  .tax-card.is-revealed .tax-card-icon-hover,
+  .tax-card.is-revealed .arrow-ne {
     transform: none;
   }
 

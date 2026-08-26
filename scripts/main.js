@@ -3,7 +3,7 @@
  * - Mobile nav toggle
  * - Features drag/scroll carousel + dots
  * - Policy tabs
- * - Tax card active state
+ * - Tax card evaluation reveal
  * - Use-case card hover / touch reveal
  */
 
@@ -524,6 +524,40 @@
       if (canHoverFine.matches) return;
       if (event.target.closest(".usecase-card")) return;
       clearUsecaseActive(null);
+    });
+  }
+
+  /* ---------- Tax cards (touch / keyboard evaluation reveal) ---------- */
+  const taxCards = Array.from(document.querySelectorAll(".tax-card"));
+
+  if (taxCards.length) {
+    function clearTaxRevealed(except) {
+      taxCards.forEach((card) => {
+        if (card !== except) card.classList.remove("is-revealed");
+      });
+    }
+
+    taxCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        if (canHoverFine.matches) return;
+        const willOpen = !card.classList.contains("is-revealed");
+        clearTaxRevealed(willOpen ? card : null);
+        card.classList.toggle("is-revealed", willOpen);
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        const willOpen = !card.classList.contains("is-revealed");
+        clearTaxRevealed(willOpen ? card : null);
+        card.classList.toggle("is-revealed", willOpen);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (canHoverFine.matches) return;
+      if (event.target.closest(".tax-card")) return;
+      clearTaxRevealed(null);
     });
   }
 })();
