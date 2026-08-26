@@ -642,7 +642,8 @@ body {
 .pricing-card-top {
   position: relative;
   display: flex;
-  flex: 0 0 auto;
+  flex: 1 1 0;
+  min-height: 0;
   align-items: flex-end;
   justify-content: center;
   padding: 12px 24px 0;
@@ -667,10 +668,10 @@ body {
 }
 
 .pricing-card-icon {
-  width: min(68%, 190px);
+  width: min(58%, 120px);
   height: auto;
   aspect-ratio: 1;
-  max-height: 190px;
+  max-height: 120px;
   object-fit: contain;
   display: block;
   margin-bottom: -1px;
@@ -679,8 +680,11 @@ body {
 }
 
 .pricing-card-body {
-  flex: 1 1 auto;
-  padding: 16px 24px 12px;
+  flex: 2.1 1 0;
+  min-height: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 24px 16px;
   border-top: 1px solid var(--rc-border);
   background: #fff;
 }
@@ -815,12 +819,12 @@ body {
   }
 
   .pricing-card-icon {
-    width: min(65%, 210px);
-    max-height: 210px;
+    width: min(55%, 132px);
+    max-height: 132px;
   }
 
   .pricing-card-body {
-    padding: 18px 24px 14px;
+    padding: 24px 24px 18px;
   }
 
   .pricing-card-text {
