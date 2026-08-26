@@ -5,6 +5,7 @@
  * - Policy tabs
  * - Tax card evaluation reveal
  * - Use-case card hover / touch reveal
+ * - Pricing card CTA funnel
  */
 
 (function () {
@@ -558,6 +559,19 @@
       if (canHoverFine.matches) return;
       if (event.target.closest(".tax-card")) return;
       clearTaxRevealed(null);
+    });
+  }
+
+  /* ---------- Pricing cards — whole card funnels to plan CTA ---------- */
+  const pricingCards = Array.from(document.querySelectorAll(".pricing-card"));
+
+  if (pricingCards.length) {
+    pricingCards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest(".pricing-card-cta")) return;
+        const cta = card.querySelector(".pricing-card-cta");
+        if (cta) cta.click();
+      });
     });
   }
 })();
