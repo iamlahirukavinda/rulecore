@@ -180,12 +180,19 @@ body {
 .policy-tab {
   position: relative;
   flex-shrink: 0;
+  margin: 0;
+  border: none;
   background: var(--rc-gray);
   color: #000;
   white-space: nowrap;
   border-radius: var(--rc-radius);
-  transition: color 0.2s ease;
+  cursor: pointer;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .policy-tab > span:first-child {
@@ -193,8 +200,45 @@ body {
   z-index: 1;
 }
 
+/* Hover peek underline — same visual language as the active progress bar */
+.policy-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: var(--rc-blue);
+  pointer-events: none;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .policy-tab.active {
   color: var(--rc-blue);
+}
+
+.policy-tab:focus-visible {
+  outline: 3px solid rgba(14, 39, 202, 0.35);
+  outline-offset: 2px;
+}
+
+.policy-tab:active {
+  transform: translateY(1px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .policy-tab:hover:not(.active) {
+    background: #e2e2e2;
+    color: var(--rc-blue);
+  }
+
+  .policy-tab:hover:not(.active)::after {
+    width: 28%;
+  }
+
+  .policy-tab.active:hover {
+    background: #e6e6e6;
+  }
 }
 
 .policy-tab-progress {
@@ -205,6 +249,7 @@ body {
   width: 0;
   background: var(--rc-blue);
   pointer-events: none;
+  z-index: 2;
 }
 
 @keyframes policy-tab-fill {
@@ -275,6 +320,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .policy-slide-media::after {
@@ -283,6 +330,7 @@ body {
   inset: 0;
   background: rgba(0, 0, 0, 0.2);
   pointer-events: none;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .policy-slide-copy {
@@ -294,6 +342,10 @@ body {
   color: #fff;
   padding: 40px 24px 24px;
   min-height: 280px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .policy-slide-copy p {
@@ -307,6 +359,34 @@ body {
 .policy-slide-copy .arrow-ne {
   align-self: flex-end;
   margin-top: 48px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-slide-copy:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: -4px;
+}
+
+.policy-slide-copy:active {
+  background-color: #1635e8;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .policy-slide-copy:hover {
+    background-color: var(--rc-blue);
+  }
+
+  .policy-slide-copy:hover .arrow-ne {
+    transform: translate(6px, -6px);
+  }
+
+  .policy-slide-inner:has(.policy-slide-copy:hover) .policy-slide-media img {
+    transform: scale(1.04);
+  }
+
+  .policy-slide-inner:has(.policy-slide-copy:hover) .policy-slide-media::after {
+    background: rgba(0, 0, 0, 0.08);
+  }
 }
 
 @media (min-width: 768px) {
@@ -815,9 +895,33 @@ body {
     transition: none;
   }
 
+  .policy-slide-media img,
+  .policy-slide-copy,
+  .policy-slide-copy .arrow-ne,
+  .policy-slide-media::after {
+    transition: none !important;
+  }
+
+  .policy-slide-copy:hover .arrow-ne {
+    transform: none;
+  }
+
+  .policy-slide-inner:has(.policy-slide-copy:hover) .policy-slide-media img {
+    transform: none;
+  }
+
   .policy-tab.active .policy-tab-progress {
     animation: none;
     width: 100%;
+  }
+
+  .policy-tab,
+  .policy-tab::after {
+    transition: none !important;
+  }
+
+  .policy-tab:active {
+    transform: none;
   }
 
   .usecase-card,
