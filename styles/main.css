@@ -183,6 +183,7 @@ body {
   background: var(--rc-gray);
   color: #000;
   white-space: nowrap;
+  border-radius: var(--rc-radius);
   transition: color 0.2s ease;
   overflow: hidden;
 }
