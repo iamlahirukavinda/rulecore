@@ -19,30 +19,31 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Large CTA arrow (double-stroke ↗) */
+/* Brand arrow — new SVG (from arrow (2).svg), rotated to keep northeast angle */
 .arrow-ne {
   position: relative;
   display: inline-block;
   width: 1.25em;
   height: 1.25em;
   flex-shrink: 0;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.arrow-ne::before,
-.arrow-ne::after {
+.arrow-ne::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: currentColor;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 17L17 7M17 7H9M17 7V15' stroke='black' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E")
-    center / contain no-repeat;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 17L17 7M17 7H9M17 7V15' stroke='black' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E")
-    center / contain no-repeat;
-}
-
-.arrow-ne::after {
-  inset: 0.12em 0.12em 0 0;
-  opacity: 0.35;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='black' d='M3 21.5H38V26.5H3Z'/%3E%3Cpath fill='black' d='M28.54 8L44.54 24L28.54 40H21.46L37.46 24L21.46 8Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='black' d='M3 21.5H38V26.5H3Z'/%3E%3Cpath fill='black' d='M28.54 8L44.54 24L28.54 40H21.46L37.46 24L21.46 8Z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .arrow-ne-lg {
@@ -377,7 +378,7 @@ body {
   }
 
   .policy-slide-copy:hover .arrow-ne {
-    transform: translate(6px, -6px);
+    transform: translate(6px, -6px) rotate(-45deg);
   }
 
   .policy-slide-inner:has(.policy-slide-copy:hover) .policy-slide-media img {
@@ -557,7 +558,7 @@ body {
 
 .tax-card.is-revealed .arrow-ne,
 .tax-card:focus-visible .arrow-ne {
-  transform: translate(5px, -5px);
+  transform: translate(5px, -5px) rotate(-45deg);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -589,7 +590,7 @@ body {
   }
 
   .tax-card:hover .arrow-ne {
-    transform: translate(5px, -5px);
+    transform: translate(5px, -5px) rotate(-45deg);
   }
 }
 
@@ -751,7 +752,7 @@ body {
 
 .pricing-card:focus-within .pricing-card-cta .arrow-ne {
   color: #fff;
-  transform: translate(5px, -5px);
+  transform: translate(5px, -5px) rotate(-45deg);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -778,7 +779,7 @@ body {
 
   .pricing-card:hover .pricing-card-cta .arrow-ne {
     color: #fff;
-    transform: translate(5px, -5px);
+    transform: translate(5px, -5px) rotate(-45deg);
   }
 
   .pricing-card:hover .pricing-card-cta:hover {
@@ -978,7 +979,7 @@ body {
   }
 
   .usecase-card:hover .arrow-ne {
-    transform: translate(5px, -5px);
+    transform: translate(5px, -5px) rotate(-45deg);
   }
 }
 
@@ -1023,7 +1024,7 @@ body {
 
 .usecase-card:focus-visible .arrow-ne,
 .usecase-card.is-active .arrow-ne {
-  transform: translate(5px, -5px);
+  transform: translate(5px, -5px) rotate(-45deg);
 }
 
 .usecase-card.is-active {
@@ -1126,7 +1127,7 @@ body {
 }
 
 .bottom-cta:hover .arrow-ne {
-  transform: translate(6px, -6px);
+  transform: translate(6px, -6px) rotate(-45deg);
 }
 
 .bottom-cta:active {
@@ -1146,7 +1147,7 @@ body {
   }
 
   .bottom-cta:hover .arrow-ne {
-    transform: none;
+    transform: rotate(-45deg);
   }
 
   .pricing-card,
@@ -1162,11 +1163,14 @@ body {
   }
 
   .pricing-card:hover .pricing-card-icon,
-  .pricing-card:hover .pricing-card-cta .arrow-ne,
   .pricing-card:focus-within,
-  .pricing-card:focus-within .pricing-card-icon,
-  .pricing-card:focus-within .pricing-card-cta .arrow-ne {
+  .pricing-card:focus-within .pricing-card-icon {
     transform: none;
+  }
+
+  .pricing-card:hover .pricing-card-cta .arrow-ne,
+  .pricing-card:focus-within .pricing-card-cta .arrow-ne {
+    transform: rotate(-45deg);
   }
 
   .pricing-card:focus-within {
@@ -1188,13 +1192,16 @@ body {
   .tax-card:hover .tax-card-title-hover,
   .tax-card:hover .tax-card-icon-default,
   .tax-card:hover .tax-card-icon-hover,
-  .tax-card:hover .arrow-ne,
   .tax-card.is-revealed .tax-card-title-default,
   .tax-card.is-revealed .tax-card-title-hover,
   .tax-card.is-revealed .tax-card-icon-default,
-  .tax-card.is-revealed .tax-card-icon-hover,
-  .tax-card.is-revealed .arrow-ne {
+  .tax-card.is-revealed .tax-card-icon-hover {
     transform: none;
+  }
+
+  .tax-card:hover .arrow-ne,
+  .tax-card.is-revealed .arrow-ne {
+    transform: rotate(-45deg);
   }
 
   .policy-carousel-track,
@@ -1210,7 +1217,7 @@ body {
   }
 
   .policy-slide-copy:hover .arrow-ne {
-    transform: none;
+    transform: rotate(-45deg);
   }
 
   .policy-slide-inner:has(.policy-slide-copy:hover) .policy-slide-media img {
@@ -1253,10 +1260,13 @@ body {
   .usecase-card.is-active .usecase-card-default,
   .usecase-card:hover .usecase-card-default img,
   .usecase-card:focus-visible .usecase-card-default img,
-  .usecase-card.is-active .usecase-card-default img,
+  .usecase-card.is-active .usecase-card-default img {
+    transform: none;
+  }
+
   .usecase-card:hover .arrow-ne,
   .usecase-card:focus-visible .arrow-ne,
   .usecase-card.is-active .arrow-ne {
-    transform: none;
+    transform: rotate(-45deg);
   }
 }
