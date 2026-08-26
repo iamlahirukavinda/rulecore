@@ -277,12 +277,15 @@ body {
 
 .policy-carousel-track {
   display: flex;
+  align-items: stretch;
   gap: var(--policy-slide-gap);
   transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
 .policy-slide {
+  display: flex;
+  flex-direction: column;
   flex: 0 0 var(--policy-slide-width);
   width: var(--policy-slide-width);
   min-width: var(--policy-slide-width);
@@ -301,16 +304,20 @@ body {
 .policy-slide-inner {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 220px 1fr;
   width: 100%;
-  min-height: 420px;
+  height: 560px;
+  min-height: 560px;
   overflow: hidden;
   background: #161616;
   border-radius: var(--rc-radius);
+  flex: 1 1 auto;
 }
 
 .policy-slide-media {
   position: relative;
-  min-height: 260px;
+  min-height: 0;
+  height: 100%;
   overflow: hidden;
   background: #cec9c9;
 }
@@ -341,8 +348,9 @@ body {
   justify-content: space-between;
   background: #161616;
   color: #fff;
-  padding: 40px 24px 24px;
-  min-height: 280px;
+  padding: 28px 20px 20px;
+  min-height: 0;
+  height: 100%;
   text-decoration: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -352,14 +360,15 @@ body {
 .policy-slide-copy p {
   margin: 0;
   max-width: 601px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.35;
 }
 
 .policy-slide-copy .arrow-ne {
   align-self: flex-end;
-  margin-top: 48px;
+  margin-top: 24px;
+  flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -393,6 +402,7 @@ body {
 @media (min-width: 768px) {
   .policy-slide-inner {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     min-height: 480px;
     height: 480px;
   }
@@ -410,6 +420,10 @@ body {
 
   .policy-slide-copy p {
     font-size: 28px;
+  }
+
+  .policy-slide-copy .arrow-ne {
+    margin-top: 48px;
   }
 }
 
