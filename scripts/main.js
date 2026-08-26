@@ -275,7 +275,7 @@
     : [];
 
   if (policyTabs.length && policyTrack && policyViewport && policySlides.length) {
-    const SLIDE_DURATION = 6000;
+    const SLIDE_DURATION = 9000;
     const SLIDE_COUNT = policySlides.length;
     let activeIndex = 0;
     let trackIndex = 1;
