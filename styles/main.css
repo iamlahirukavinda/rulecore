@@ -648,9 +648,7 @@ body {
   background: #fff;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition:
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pricing-card-top {
@@ -795,7 +793,6 @@ body {
 .pricing-card:focus-within {
   z-index: 1;
   transform: translateY(-4px);
-  box-shadow: 0 14px 36px rgba(14, 39, 202, 0.18);
 }
 
 .pricing-card:focus-within .pricing-card-icon {
@@ -822,7 +819,6 @@ body {
   .pricing-card:hover {
     z-index: 1;
     transform: translateY(-4px);
-    box-shadow: 0 14px 36px rgba(14, 39, 202, 0.18);
   }
 
   .pricing-card:hover .pricing-card-icon {
