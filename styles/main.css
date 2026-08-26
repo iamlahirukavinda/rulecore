@@ -642,10 +642,10 @@ body {
 .pricing-card-top {
   position: relative;
   display: flex;
-  flex: 0 0 168px;
+  flex: 0 0 150px;
   align-items: flex-end;
   justify-content: center;
-  padding: 44px 24px 0;
+  padding: 10px 12px 0;
   background: #fff;
 }
 
@@ -670,10 +670,10 @@ body {
 }
 
 .pricing-card-icon {
-  width: min(52%, 112px);
+  width: min(90%, 148px);
   height: auto;
   aspect-ratio: 1;
-  max-height: 112px;
+  max-height: 148px;
   object-fit: contain;
   display: block;
   margin-bottom: -1px;
@@ -854,8 +854,8 @@ body {
   }
 
   .pricing-card-top {
-    flex-basis: 180px;
-    padding: 48px 24px 0;
+    flex-basis: 160px;
+    padding: 10px 12px 0;
   }
 
   .pricing-card-label {
@@ -865,8 +865,8 @@ body {
   }
 
   .pricing-card-icon {
-    width: min(50%, 120px);
-    max-height: 120px;
+    width: min(90%, 158px);
+    max-height: 158px;
   }
 
   .pricing-card-body {
