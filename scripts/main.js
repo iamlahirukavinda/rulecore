@@ -4,6 +4,7 @@
  * - Features drag/scroll carousel + dots
  * - Policy tabs
  * - Tax card active state
+ * - Use-case card hover / touch reveal
  */
 
 (function () {
@@ -489,5 +490,40 @@
     updateSlideMetrics();
     syncSlideStates();
     goToSlide(0);
+  }
+
+  /* ---------- Use-case cards (touch / keyboard reveal) ---------- */
+  const usecaseCards = Array.from(document.querySelectorAll(".usecase-card"));
+  const canHoverFine = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  if (usecaseCards.length) {
+    function clearUsecaseActive(except) {
+      usecaseCards.forEach((card) => {
+        if (card !== except) card.classList.remove("is-active");
+      });
+    }
+
+    usecaseCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        if (canHoverFine.matches) return;
+        const willOpen = !card.classList.contains("is-active");
+        clearUsecaseActive(willOpen ? card : null);
+        card.classList.toggle("is-active", willOpen);
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        const willOpen = !card.classList.contains("is-active");
+        clearUsecaseActive(willOpen ? card : null);
+        card.classList.toggle("is-active", willOpen);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (canHoverFine.matches) return;
+      if (event.target.closest(".usecase-card")) return;
+      clearUsecaseActive(null);
+    });
   }
 })();
