@@ -39,19 +39,20 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/main.css?v=4" />
   </head>
   <body class="bg-white text-black font-sans antialiased">
     <!-- ===================== HERO ===================== -->
     <header
-      class="relative min-h-[640px] md:min-h-[760px] lg:min-h-[853px] overflow-hidden bg-black"
+      class="hero relative min-h-[640px] md:min-h-[760px] lg:min-h-[853px] overflow-hidden bg-black"
     >
-      <img
-        src="images/hero-bg.png"
-        alt=""
-        class="absolute inset-0 h-full w-full object-cover"
-        aria-hidden="true"
-      />
+      <div class="hero-ambient" aria-hidden="true" data-mosaic-root>
+        <div class="hero-mosaic-blur">
+          <div class="hero-mosaic-grid" data-mosaic></div>
+        </div>
+        <div class="hero-frost"></div>
+        <div class="hero-ambient-grain"></div>
+      </div>
       <div class="relative z-10 mx-auto max-w-page px-4 sm:px-6 lg:px-[72px]">
         <!-- Nav -->
         <nav
@@ -948,6 +949,7 @@
       </div>
     </footer>
 
+    <script src="scripts/hero-mosaic.js?v=2"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
