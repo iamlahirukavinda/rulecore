@@ -12,11 +12,13 @@
 
 html {
   scroll-behavior: smooth;
+  line-height: normal;
 }
 
 body {
   font-family: "DM Sans", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: normal;
 }
 
 /*
@@ -232,7 +234,6 @@ body {
   text-align: center;
   font-size: 1.125rem;
   font-weight: 500;
-  line-height: 1.35;
 }
 
 .feature-card-clone {
@@ -468,7 +469,6 @@ body {
   max-width: 601px;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.35;
 }
 
 .policy-slide-copy .arrow-ne {
@@ -576,7 +576,6 @@ body {
   grid-area: 1 / 1;
   font-size: 20px;
   font-weight: 500;
-  line-height: 1.35;
   letter-spacing: -0.01em;
   transition:
     opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -727,7 +726,6 @@ body {
 
   .tax-card-title {
     font-size: 24px;
-    line-height: 1.3;
   }
 
   .tax-card-icons {
@@ -780,7 +778,6 @@ body {
   color: #fff;
   font-size: 11px;
   font-weight: 700;
-  line-height: 1;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -819,7 +816,6 @@ body {
   margin: 0;
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.45;
   color: var(--rc-muted);
   transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -828,7 +824,6 @@ body {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
-  line-height: 1.35;
   color: #161616;
 }
 
@@ -846,7 +841,6 @@ body {
   padding-left: 18px;
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.35;
   color: #2b2f36;
 }
 
@@ -1075,7 +1069,6 @@ body {
   color: #fff;
   font-size: 22px;
   font-weight: 700;
-  line-height: 1.2;
   letter-spacing: -0.01em;
   transition:
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -1088,7 +1081,6 @@ body {
   max-width: 36rem;
   font-size: 18px;
   font-weight: 500;
-  line-height: 1.4;
   letter-spacing: -0.01em;
   opacity: 0;
   transform: translateY(10px);
@@ -1115,7 +1107,6 @@ body {
   margin: 0;
   font-size: 15px;
   font-weight: 600;
-  line-height: 1.3;
   opacity: 0.92;
 }
 
@@ -1216,7 +1207,6 @@ body {
 @media (min-width: 640px) {
   .usecase-card-title {
     font-size: 26px;
-    line-height: 1.18;
   }
 
   .usecase-card-hover {
@@ -1225,7 +1215,6 @@ body {
 
   .usecase-card-copy {
     font-size: 20px;
-    line-height: 1.38;
   }
 
   .usecase-card-meta-label {
@@ -1247,7 +1236,6 @@ body {
 
   .usecase-card-copy {
     font-size: 22px;
-    line-height: 1.35;
   }
 
   .usecase-card-meta {
